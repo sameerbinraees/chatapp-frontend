@@ -3,11 +3,11 @@ import './App.css';
 import logo from './logo.svg';
 
 function App() {
-    const socket = io('localhost:9000');
+    const socket = io('http://localhost:9000');
 
     const dummy = () => {
         console.log("hi");
-        socket.emit("connection")
+        socket.emit("disconnect")
 
     }
     return (

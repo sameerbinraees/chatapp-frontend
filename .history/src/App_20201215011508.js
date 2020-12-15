@@ -7,7 +7,7 @@ function App() {
 
     const dummy = () => {
         console.log("hi");
-        socket.emit("connection")
+        socket.emit("disconnect")
 
     }
     return (

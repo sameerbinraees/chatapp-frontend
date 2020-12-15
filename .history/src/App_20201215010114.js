@@ -3,18 +3,19 @@ import './App.css';
 import logo from './logo.svg';
 
 function App() {
-    const socket = io('localhost:9000');
+    const socket = io('http://localhost:9000');
 
     const dummy = () => {
-        console.log("hi");
-        socket.emit("connection")
+        socket.emit("disconnect")
 
     }
     return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <p onClick={dummy}>Click</p>
+                <p>
+                    Edit <code>src/App.js</code> and save to reload.
+                </p>
             </header>
         </div>
     );

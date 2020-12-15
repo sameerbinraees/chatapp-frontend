@@ -1,13 +1,12 @@
-import io from 'socket.io-client';
 import './App.css';
 import logo from './logo.svg';
 
 function App() {
-    const socket = io('localhost:9000');
+    // const socket = io('localhost:9000');
 
     const dummy = () => {
         console.log("hi");
-        socket.emit("connection")
+        // socket.emit("connection")
 
     }
     return (

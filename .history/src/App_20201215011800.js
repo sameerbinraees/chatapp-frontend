@@ -3,7 +3,7 @@ import './App.css';
 import logo from './logo.svg';
 
 function App() {
-    const socket = io('localhost:9000');
+    const socket = io();
 
     const dummy = () => {
         console.log("hi");
