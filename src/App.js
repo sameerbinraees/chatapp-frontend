@@ -1,23 +1,26 @@
-import io from 'socket.io-client';
-import './App.css';
-import logo from './logo.svg';
+import io from "socket.io-client";
+import React, { useEffect, useRef } from "react";
+import "./App.css";
 
 function App() {
-    const socket = io('localhost:9000');
+  const socket = useRef();
 
-    const dummy = () => {
-        console.log("hi");
-        socket.emit("connection")
+  useEffect(() => {
+    socket.current = io("localhost:8080");
+  }, []);
 
-    }
-    return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p onClick={dummy}>Click</p>
-            </header>
-        </div>
-    );
+  const dummy = () => {
+    console.log("hi");
+    socket.emit("connection");
+  };
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <p onClick={dummy}>Click</p>
+      </header>
+    </div>
+  );
 }
 
 export default App;
